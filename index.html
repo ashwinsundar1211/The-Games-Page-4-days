@@ -8,9 +8,6 @@
       }
       h1{
         color: darkblue;
-        position: absolute;
-        left: 410;
-        bottom: 630;
         font-size: 40px;
         font-weight: bolder;
       }
@@ -25,10 +22,7 @@
         background-color: white;
         padding: 20px;
         width: 18%;
-        right: 480;
-        position: absolute;
         height: 28%;
-        top: 130;
         border-radius: 5px;
       }
       .name{
@@ -48,15 +42,7 @@
         border: 1px solid rgb(228, 228, 228);
       }
       #description1{
-        left: 410;
-        bottom: 580;
-        position: absolute;
         font-size: 30px;
-      }
-      #description2{
-        position: absolute;
-        right: 383;
-        top: 440;
       }
       #note{
         color: red;
@@ -76,18 +62,29 @@
         font-size: 14px;
         font-weight: bolder;
       }
+      @media (max-width: 500px) {
+        header h1 {
+          font-size: 2rem;
+        }
+        header p {
+          font-size: 1rem;
+        }
+      }
+      button:hover, input[type="reset"]:hover {
+        opacity: 0.9;
+      }
     </style>
   </head>
   <body>
     <center>
-      <h1>The Games Page</h1>
-      <p id="description1">Calculator, apps, and so much more!</p>
       <section>
         <p id="note">Note: Don't use full screens and use this website horizontally!</p>
       </section>
-    </center>
-    <div>
-      <center>
+      <header>
+        <h1>The Games Page</h1>
+        <p id="description1">Calculator, apps, and so much more!</p>
+      </header>
+      <div>
         <form>
           <input type="text" id="Name" class="username" placeholder="Enter your username"><br><br>
           <input type="password" id="Name" class="password" placeholder="Enter your password"><br><br>
@@ -95,10 +92,8 @@
           <input type="reset" class="name" id="button"><br><br>
           <button type="button" class="name" id="button" onclick="login()">Login</button>
         </form>
-      </center>
-    </div>
-    <p id="description2">This <b>Form</b> Is for you to <b>log in/sign up</b> and have <b>free access</b> to <b>a calculator, some apps, etc.</b></p>
-    <center>
+      </div>
+      <p id="description2">This <b>Form</b> Is for you to <b>log in/sign up</b> and have <b>free access</b> to <b>a calculator, some apps, etc.</b></p>
       <footer>
         <p>
           © 2025 The Games Page | All rights reserved
