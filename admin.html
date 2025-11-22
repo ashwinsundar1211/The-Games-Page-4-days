@@ -1,0 +1,220 @@
+<html>
+  <head>
+    <title>Admin's webpage</title>
+    <link rel="icon" type="image/png" href="https://i.redd.it/ive-made-an-icon-for-the-game-folder-v0-c3d0dd0nvcxe1.png?width=1024&format=png&auto=webp&s=acaf538fce81e98b18aeebdd4fb46a36b2137f34">
+    <style>
+      body{
+        background-color: aqua;
+      }
+      #log_out{
+        width: 25%;
+        height: 5%;
+        background-color: lightyellow;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      button{
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      section{
+        background-color: lightsalmon;
+      }
+      #calc, #buttons{
+        width: 25%;
+        height: 5%;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      h1{
+        color: darkblue;
+      }
+      footer{
+        background-color: black;
+        color: white;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        font-size: 14px;
+        font-weight: bolder;
+      }
+      #number, #ni, #cl, #si{
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>Admin's website</h1>
+      <p id="welcomeDescription">Welcome User the Admin! You can get more games than the user and you can do some cool stuff!</p>
+    </center>
+    <section>
+      <center>
+        <br>
+        <h2>Calculator</h2>
+        <button id="calc" onclick="sum()">Add</button>
+        <button id="calc" onclick="subtract()">Subtract</button>
+        <button id="calc" onclick="multiply()">Multiply</button>
+        <button id="calc" onclick="divide()">Divide</button>
+        <button id="calc" onclick="power()">Exponential Power</button>
+        <button id="calc" onclick="remainder()">Division remainder</button>
+        <br><br><br>
+      </center>
+    </section>
+    <br>
+    <section>
+      <center>
+        <br>
+        <h2>Personal informations</h2>
+        <button id="buttons" onclick="names()">Your Name</button>
+        <p id="ni">Your name is ___________</p>
+        <button id="buttons" onclick="classu()">Your Class</button>
+        <p id="cl">Your class is ___________</p>
+        <button id="buttons" onclick="siction()">Your Section</button>
+        <p id="si">Your section is ___________</p>
+        <br><br><br>
+      </center>
+    </section>
+    <br>
+    <section>
+      <br>
+      <center>
+        <h2>The Click-Increment Game</h2>
+        <button id="calc" onclick="increment()">Click Here to Increment the Number of the below text</button>
+        <button id="calc" onclick="reset()">Reset</button>
+        <p id="number">0</p>
+        <br><br><br>
+      </center>
+    </section>
+    <center>
+      <button id="log_out" onclick="log_out()">Log Out</button>
+    </center>
+    <br><br><br><br>
+    <center>
+      <footer>
+          <p>
+            © 2025 The Games Page | All rights reserved
+          </p>
+      </footer>
+    </center>  
+
+    <script>
+      alert("Welcome to the webpage, admin!");
+
+      function log_out()
+      {
+        window.location.href = "index.html";
+        localStorage.removeItem("username");
+      }
+
+      function sum()
+      {
+        alert("Let Us Find Some Sums Right Now!");
+        var g = parseInt(prompt("Enter the First Number"));
+        var h = parseInt(prompt("Enter the Second Number"));
+        var sum = g + h;
+        alert("Your first number is " + g);
+        alert("Your second number is " + h);
+        alert("Your sum is " + g + " + " + h + " = " + sum);
+      }
+
+      function subtract()
+      {
+        alert("Let Us Find Some Differences Right Now!");
+        var g = parseInt(prompt("Enter the First Number"));
+        var h = parseInt(prompt("Enter the Second Number"));
+        var subtracts = g - h;
+        alert("Your first number is " + g);
+        alert("Your second number is " + h);
+        alert("Your difference is " + g + " - " + h + " = " + subtracts);
+      }
+      
+      function multiply()
+      {
+        alert("Let Us Find Some Products Right Now!");
+        var g = parseInt(prompt("Enter the First Number"));
+        var h = parseInt(prompt("Enter the Second Number"));
+        var multiplys = g * h;
+        alert("Your first number is " + g);
+        alert("Your second number is " + h);
+        alert("Your product is " + g + " x " + h + " = " + multiplys);
+      }
+
+      function divide()
+      {
+        alert("Let Us Find Some Quotients Right Now!");
+        var g = parseInt(prompt("Enter the First Number"));
+        var h = parseInt(prompt("Enter the Second Number"));
+        var divides = g / h;
+        alert("Your first number is " + g);
+        alert("Your second number is " + h);
+        alert("Your quotient is " + g + " ÷ " + h + " = " + divides);
+      }
+
+      function power()
+      {
+        alert("Let Us Find Some Exponential Powers Right Now!");
+        var g = parseInt(prompt("Enter the First Number"));
+        var h = parseInt(prompt("Enter the Second Number"));
+        var powered = g ** h;
+        alert("Your first number is " + g);
+        alert("Your second number is " + h);
+        alert("Your exponential power is " + g + " ^ " + h + " = " + powered);
+      }
+
+      function remainder()
+      {
+        alert("Let Us Find Some Division's remainders Right Now!");
+        var g = parseInt(prompt("Enter the First Number"));
+        var h = parseInt(prompt("Enter the Second Number"));
+        var remainders = g % h;
+        alert("Your first number is " + g);
+        alert("Your second number is " + h);
+        alert("Your division's remainder is " + g + " ÷ " + h + ", R = " + remainders);
+      }
+
+      function names()
+      {
+        var nameu = prompt("What's your name?");
+        document.getElementById("ni").innerHTML = "Your name is " + nameu;
+      }
+
+      function classu()
+      {
+        var classe = prompt("What's your class?");
+        document.getElementById("cl").innerHTML = "Your class is " + classe;
+      }
+
+      function siction()
+      {
+        var sections = prompt("What's your section?");
+        document.getElementById("si").innerHTML = "Your section is " + sections;
+      }
+
+      function increment()
+      {
+        var a = Number(document.getElementById("number").innerHTML);
+        var sum = a += 1;
+        document.getElementById("number").innerHTML = sum;
+      }
+
+      function reset()
+      {
+        var a = Number(document.getElementById("number").innerHTML = 0);
+      }
+
+      var name = localStorage.getItem("username");
+      if (name){
+        document.getElementById("welcomeDescription").innerHTML =
+          "Welcome " + name + " the Admin! You can get more games than the user and you can do some cool stuff!";
+      }
+    </script>
+  </body>
+</html>

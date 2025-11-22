@@ -1,0 +1,140 @@
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="icon" type="image/png" href="https://i.redd.it/ive-made-an-icon-for-the-game-folder-v0-c3d0dd0nvcxe1.png?width=1024&format=png&auto=webp&s=acaf538fce81e98b18aeebdd4fb46a36b2137f34">
+    <style>
+      body{
+        background-color: aqua;
+      }
+      h1{
+        color: darkblue;
+        position: absolute;
+        left: 410;
+        bottom: 630;
+        font-size: 40px;
+        font-weight: bolder;
+      }
+      a{
+        color: black;
+        text-decoration: none;
+      }
+      #button{
+        cursor: pointer;
+      }
+      div{
+        background-color: white;
+        padding: 20px;
+        width: 18%;
+        right: 480;
+        position: absolute;
+        height: 28%;
+        top: 130;
+        border-radius: 5px;
+      }
+      .name{
+        width: 100%;
+        height: 15%;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      #name, #Name{
+        width: 100%;
+        height: 15%;
+        border-radius: 8px;
+        border: 1px solid rgb(228, 228, 228);
+      }
+      #description1{
+        left: 410;
+        bottom: 580;
+        position: absolute;
+        font-size: 30px;
+      }
+      #description2{
+        position: absolute;
+        right: 383;
+        top: 440;
+      }
+      #note{
+        color: red;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      section{
+        background-color: lightgreen;
+      }
+      footer{
+        background-color: black;
+        color: white;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        font-size: 14px;
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>The Games Page</h1>
+      <p id="description1">Calculator, apps, and so much more!</p>
+      <section>
+        <p id="note">Note: Don't use full screens and use this website horizontally!</p>
+      </section>
+    </center>
+    <div>
+      <center>
+        <form>
+          <input type="text" id="Name" class="username" placeholder="Enter your username"><br><br>
+          <input type="password" id="Name" class="password" placeholder="Enter your password"><br><br>
+          <input type="text" id="name" placeholder="Enter your name"><br><br>
+          <input type="reset" class="name" id="button"><br><br>
+          <button type="button" class="name" id="button" onclick="login()">Login</button>
+        </form>
+      </center>
+    </div>
+    <p id="description2">This <b>Form</b> Is for you to <b>log in/sign up</b> and have <b>free access</b> to <b>a calculator, some apps, etc.</b></p>
+    <center>
+      <footer>
+        <p>
+          © 2025 The Games Page | All rights reserved
+        </p>
+      </footer>
+    </center>
+
+    <script>
+      alert("Welcome to The Games Page!!! Log in/Sign Up to uncover some exciting games!");
+
+      function login() 
+      {
+        var username = document.getElementsByClassName("username")[0].value;
+        var password = document.getElementsByClassName("password")[0].value;
+        var a = confirm("You wish to go with this?");
+        if(a == true){
+          if(username == "admin" && password == "admin123"){
+            var name = document.getElementById("name").value;
+            localStorage.setItem("username", name);
+            window.location.href = "admin.html";
+          }
+          else if(username == "guest" && password == "guest123"){
+            var name = document.getElementById("name").value;
+            localStorage.setItem("username", name);
+            window.location.href = "guest.html";
+          }
+          else{
+            var name = document.getElementById("name").value;
+            localStorage.setItem("username", name);
+            window.location.href = "welcome.html";
+          }
+        }
+        else{
+          alert("You are not allowed to login");
+        }
+      }
+    </script>
+  </body>
+</html>

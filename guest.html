@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Guest's webpage</title>
+    <link rel="icon" type="image/png" href="https://i.redd.it/ive-made-an-icon-for-the-game-folder-v0-c3d0dd0nvcxe1.png?width=1024&format=png&auto=webp&s=acaf538fce81e98b18aeebdd4fb46a36b2137f34">
+    <style>
+      body{
+        background-color: aqua;
+      }
+      h1{
+        color: darkblue;
+      }
+      button{
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      #log_out{
+        width: 25%;
+        height: 5%;
+        background-color: lightyellow;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>Guest's webpage</h1>
+      <p id="welcomeDescription">Welcome User the Guest! You can get lesser games than the user and you have to login to get more games!</p>
+    </center>
+    <center>
+      <button id="log_out" onclick="log_out()">Log Out</button>
+    </center>
+
+    <script>
+      alert("Welcome to the webpage, guest!")
+
+      function log_out()
+      {
+        window.location.href = "index.html";
+        localStorage.removeItem("username");
+      }
+
+      var name = localStorage.getItem("username");
+      if (name){
+        document.getElementById("welcomeDescription").innerHTML =
+          "Welcome " + name + " the Guest! You can get lesser games than the user and you have to login to get more games!";
+      }
+    </script>
+  </body>
+</html>
